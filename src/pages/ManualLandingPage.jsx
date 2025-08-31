@@ -89,7 +89,7 @@ export default function ManualLandingPage() {
                 </div>
             </div>
 
-            <div className="flex flex-col items-center mt-[392px] bg-[#232728] py-6 px-[78px]">
+            <div className="flex flex-col mt-[392px] bg-[#232728] py-6 px-[78px]">
                 {/* Supporting Sections */}
                 <div className="flex flex-col items-center">
                     <div className="flex flex-col md:flex-row font-bold text-3xl md:text-5xl gap-2">
@@ -162,7 +162,7 @@ export default function ManualLandingPage() {
                 of that the first 1 will be a col of small width
                 rest will be divided equally */}
 
-                <section className="relative grid grid-cols-7 grid-rows-4 h-[587px] gap-y-[23px] mt-[52px]">
+                <section className="relative grid grid-cols-7 grid-rows-4 h-[587px] gap-y-[23px] mt-[52px] text-left max-w-[757px]"> 
                     <div className="col-start-1 col-end-2 row-span-2">
                         <h3 className="font-extrabold text-6xl text-[#FFFFFF12] rotate-270">Call 01</h3>
                     </div>
@@ -171,8 +171,20 @@ export default function ManualLandingPage() {
                     </div>
                     <div
                         className="absolute top-0 right-0 h-full w-full bg-white"
-                        style={{ clipPath: "circle(280px at right 50%)" }}
+                        style={{ clipPath: "circle(285px at right 50%)" }}
                     />
+                    {/* <div className="absolute top-[59px] right-[-208px]">
+                        <Lottie options={defaultOptions}
+                            height={416}
+                            width={416}
+                        />
+                    </div> */}
+                    <div className="absolute right-[-293.5px]">
+                        <Lottie options={defaultOptions}
+                            height={587}
+                            width={587}
+                        />
+                    </div>
                     <div className="col-start-2 col-end-8 row-start-1 row-end-2 bg-[#1B1C1E] rounded-2xl h-32 p-8 text-white">
                         <p className="text-white text-xs">Your first content here</p>
                     </div>
