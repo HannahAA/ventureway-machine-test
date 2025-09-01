@@ -17,7 +17,7 @@ const HowItWorksSection = () => {
     };
 
     return (
-        <div className="flex flex-col mt-[392px] bg-[#232728] py-6 px-[78px] rounded-2xl">
+        <div className="flex flex-col mt-[100px] md:mt-[392px] bg-[#232728] py-6 px-5 md:px-[78px] rounded-2xl">
                 {/* Supporting Sections */}
                 <div className="flex flex-col items-center">
                     <div className="flex flex-row font-bold text-2xl md:text-5xl gap-2">
@@ -33,11 +33,11 @@ const HowItWorksSection = () => {
                 rest will be divided equally */}
 
                 <section className="relative grid grid-cols-3 md:grid-cols-7 grid-rows-4 h-[587px] gap-y-[23px] mt-[52px] text-left max-w-[757px]"> 
-                    <div className="col-start-1 col-end-2 row-start-2 row-end-3 w-max">
-                        <h3 className="font-extrabold text-6xl text-[#FFFFFF12] rotate-270">Call 01</h3>
+                    <div className="hidden md:block col-start-1 col-end-2 row-start-2 row-end-3 w-max">
+                        <h3 className="font-extrabold text-3xl md:text-6xl text-[#FFFFFF12] rotate-270">Call 01</h3>
                     </div>
-                    <div className="col-start-1 col-end-2 row-start-4 row-end-5 w-max">
-                        <h3 className="font-extrabold text-6xl text-[#FFFFFF12] rotate-270">Call 02</h3>
+                    <div className="hidden md:block col-start-1 col-end-2 row-start-4 row-end-5 w-max">
+                        <h3 className="font-extrabold text-3xl md:text-6xl text-[#FFFFFF12] rotate-270">Call 02</h3>
                     </div>
                     <div
                         className="absolute hidden md:block top-0 right-0 h-full w-full bg-[#232728]"
@@ -55,42 +55,42 @@ const HowItWorksSection = () => {
                             width={587}
                         />
                     </div>
-                    <div className="col-start-2 col-end-4 md:col-end-8 row-start-1 row-end-2 bg-[#1B1C1E] rounded-2xl h-32 pl-10 py-8 text-white">
+                    <div className="col-start-1 md:col-start-2 col-end-4 md:col-end-8 row-start-1 row-end-2 bg-[#1B1C1E] rounded-2xl h-32 p-5 md:pl-10 md:py-8 text-white">
                         {/* <p className="text-white text-xs">Your first content here</p> */}
                         <div className="flex gap-5">
-                            <img src={DocumentIcon} alt="doc-icon" className="w-[40px] h-[40px]" />
+                            <img src={DocumentIcon} alt="doc-icon" className="w-[30px] md:w-[40px] h-[30px] md:h-[40px]" />
                             <div className="max-w-[327px]">
-                                <p className="text-white font-bold text-lg">Book Your Spot</p>
+                                <p className="text-white font-bold text-sm md:text-lg">Book Your Spot</p>
                                 <p className="text-white font-medium text-xs">Pick a time that fits your schedule. Booking takes less than a minute.</p>
                             </div>
                         </div>
                     </div>
-                    <div className="col-start-2 col-end-4 md:col-end-8 row-start-2 row-end-3 bg-[#1B1C1E] rounded-2xl h-32 pl-10 py-8 text-white">
+                    <div className="col-start-1 md:col-start-2 col-end-4 md:col-end-8 row-start-2 row-end-3 bg-[#1B1C1E] rounded-2xl h-32 p-5 md:pl-10 md:py-8 text-white">
                         {/* <p className="text-white text-xs">Your second content here</p> */}
                         <div className="flex gap-5">
-                            <img src={PhoneIcon} alt="doc-icon" className="w-[40px] h-[40px]" />
+                            <img src={PhoneIcon} alt="doc-icon" className="w-[30px] md:w-[40px] h-[30px] md:h-[40px]" />
                             <div className="max-w-[299px]">
-                                <p className="text-white font-bold text-lg">Tell Us Your Story</p>
+                                <p className="text-white font-bold text-sm md:text-lg">Tell Us Your Story</p>
                                 <p className="text-white font-medium text-xs">In the first 30-minute call, we’ll listen to your goals, challenges, and how your business operates.</p>
                             </div>
                         </div>
                     </div>
-                    <div className="col-start-2 col-end-4 md:col-end-8 row-start-3 row-end-4 bg-[#000000] rounded-2xl h-36 pl-10 py-8 text-white">
+                    <div className="col-start-1 md:col-start-2 col-end-4 md:col-end-8 row-start-3 row-end-4 bg-[#000000] rounded-2xl h-32 md:h-36 p-5 md:pl-10 md:py-8 text-white">
                         {/* <p className="text-white text-xs">Your third content here</p> */}
                         <div className="flex gap-5">
                             <img src={MotionSensorIcon} alt="doc-icon" className="w-[40px] h-[40px]" />
                             <div className="max-w-[310px]">
-                                <p className="text-white font-bold text-lg">Get Practical Insights</p>
+                                <p className="text-white font-bold text-sm md:text-lg">Get Practical Insights</p>
                                 <p className="text-white font-medium text-xs">In the second 30-minute call, we’ll share practical, easy-to-understand ideas that can help you save time and work smarter</p>
                             </div>
                         </div>
                     </div>
-                    <div className="col-start-2 col-end-4 md:col-end-8 row-start-4 row-end-5 bg-[#000000] rounded-2xl h-32 pl-10 py-8 text-white">
+                    <div className="col-start-1 md:col-start-2 col-end-4 md:col-end-8 row-start-4 row-end-5 bg-[#000000] rounded-2xl min-h-32 h-fit md:h-32 p-5 md:pl-10 md:py-8 text-white">
                         {/* <p className="text-white text-xs">Your fourth content here</p> */}
                         <div className="flex gap-5">
                             <img src={RoadmapIcon} alt="doc-icon" className="w-[40px] h-[40px]" />
                             <div className="max-w-[374px]">
-                                <p className="text-white font-bold text-lg">Your Innovation Roadmap</p>
+                                <p className="text-white font-bold text-sm md:text-lg">Your Innovation Roadmap</p>
                                 <p className="text-white font-medium text-xs">Within 48 hours, you’ll get a personalized roadmap with clear next steps tailored to your business.</p>
                             </div>
                         </div>

@@ -7,6 +7,8 @@ import React from "react";
 // import RoadmapIcon from "../images/roadmap-icon.png";
 import HeroSection from "../components/LandingPageSections/HeroSection";
 import HowItWorksSection from "../components/LandingPageSections/HowItWorksSection";
+import ChatMessageBubble from "../components/ChatMessageBubble";
+import Chatbox from "../components/Chatbox";
 // import "../App.css";
 
 // // export const LandingPage = () => {
@@ -70,8 +72,19 @@ export default function ManualLandingPage() {
     // }
     // };
 
+    const messages = [
+        {sender: "user", text: "Hi"},
+        {sender: "ai", text: "Hi there! How are you doing today?"},
+        {sender: "user", text: "I'm good. What's the weather like in Manama today?"},
+        {sender: "ai", text: "Manama will be a balmy 35 degrees today. You better lather on that sunscreen!"},
+        {sender: "user", text: "Will do thx"},
+        {sender: "ai", text: "Anytime! I'm here if you need help with anythign else."},
+        {sender: "user", text: "Oh yea, how far is it to Washington from here?"},
+        {sender: "ai", text: "Washington DC?"},
+    ];
+
   return (
-    <div className="flex flex-col min-h-screen">
+    <div className="flex flex-col min-h-screen gap-[100px] md:gap-[245px]">
         <main className="flex-grow">
             {/* Hero Section */}
             
@@ -167,12 +180,29 @@ export default function ManualLandingPage() {
 
             <HowItWorksSection />
 
-            <div className="flex flex-row place-self-center font-bold text-2xl md:text-5xl gap-2 mt-[170px]">
+            <div className="flex flex-col md:flex-row place-self-center font-bold text-2xl md:text-5xl gap-2 mt-[100px] md:mt-[170px]">
                 <h2 className="bg-linear-to-r from-[#00E5FC] to-[#137FD8] bg-clip-text text-transparent">Ask me anything about</h2>
                 <h2 className="bg-linear-to-r from-[#CACACA] to-[#878787] bg-clip-text text-transparent">InnoHour!</h2>
             </div>
+
+            {/* <div className="flex flex-col bg-[#222627] w-[1164px] h-[722px] mt-[28px] rounded-[20px] p-8 gap-[25px]">
+                <div className="bg-red-400 w-full h-[567px] overflow-y-auto no-scrollbar flex flex-col gap-[34px]">
+                    {messages.map((message, index) => <ChatMessageBubble key={index} sender={message?.sender} text={message?.text} />)}
+                </div>
+                <div className="bg-amber-200 w-full h-[66px] flex gap-[15px]">
+                    <input type="text" className="h-full flex-grow bg-[#191919] rounded-[20px] text-white font-normal text-xl p-5" />
+                    <div typeof="button" className="w-[123px] h-full bg-[#1381D9] hover:bg-blue-500 text-white font-normal text-xl leading-[66px] rounded-[20px] cursor-pointer">Submit</div>
+                </div>
+            </div> */}
+            <Chatbox messages={messages} />
         </main>
-        <footer></footer>
+        <footer className="w-full h-[135px] md:h-[169px] bg-[#0E0E0E] flex flex-col self-center justify-center">
+            <div className="flex font-bold text-2xl md:text-5xl justify-center">
+                <h3 className="text-white">Inno</h3>
+                <h3 className="text-[#00E5FC]">Hour</h3>
+            </div>
+            <p className="font-normal text-xs md:text-lg text-white">Crafted for testing you!</p>
+        </footer>
     </div>
   );
 }
