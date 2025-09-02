@@ -34,7 +34,7 @@ const ChatMessageBubble = ({message = {}, messageIndex, allMessages, updateMessa
     return (
         <div className={`flex gap-2 md:gap-4 ${sender === "user" && 'flex-row-reverse'}`}>
             <div className="w-[25px] md:w-[45px] h-[27px] md:h-[47px] rounded-[50%] bg-[#191919]"></div>
-            <div className="px-2 md:px-6 py-1 md:py-5 rounded-lg md:rounded-[20px] bg-[#191919] max-w-[28vw] text-white font-normal text-sm md:text-xl text-left">{text}</div>
+            <div className="px-2 md:px-6 py-1 md:py-5 rounded-lg md:rounded-[20px] bg-[#191919] max-w-[28vw] text-white font-normal text-sm lg:text-xl text-left">{text}</div>
         </div>
     );
 };

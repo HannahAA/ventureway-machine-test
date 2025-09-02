@@ -1,7 +1,7 @@
 @import "tailwindcss";
 
-/* @import "tailwindcss/preflight"; */
-/* @tailwind utilities; */
+/* @import "tailwindcss/preflight";
+@import "tailwindcss/utilities"; */
 
 :root {
   font-family: system-ui, Avenir, Helvetica, Arial, sans-serif;
@@ -17,6 +17,10 @@
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+}
+
+body {
+  font-family: 'Heebo', sans-serif;
 }
 
 /* a {
@@ -74,64 +78,64 @@ button:focus-visible {
 } */
 
 @font-face {
-  font-family: 'Heebo'; /* Choose a unique name for your font */
-  src: url('./assets/fonts/Heebo-Black.ttf') format('truetype');
+  font-family: 'Heebo';
+  src: url('/fonts/Heebo-Black.ttf') format('truetype');
   font-weight: 900;
   font-style: normal;
 }
 
 @font-face {
-  font-family: 'Heebo'; /* Choose a unique name for your font */
-  src: url('./assets/fonts/Heebo-ExtraBold.ttf') format('truetype');
+  font-family: 'Heebo';
+  src: url('/fonts/Heebo-ExtraBold.ttf') format('truetype');
   font-weight: 800;
   font-style: normal;
 }
 
 @font-face {
-  font-family: 'Heebo'; /* Choose a unique name for your font */
-  src: url('./assets/fonts/Heebo-Bold.ttf') format('truetype');
+  font-family: 'Heebo';
+  src: url('/fonts/Heebo-Bold.ttf') format('truetype');
   font-weight: 700;
   font-style: normal;
 }
 
 @font-face {
-  font-family: 'Heebo'; /* Choose a unique name for your font */
-  src: url('./assets/fonts/Heebo-SemiBold.ttf') format('truetype');
+  font-family: 'Heebo';
+  src: url('/fonts/Heebo-SemiBold.ttf') format('truetype');
   font-weight: 600;
   font-style: normal;
 }
 
 @font-face {
-  font-family: 'Heebo'; /* Choose a unique name for your font */
-  src: url('./assets/fonts/Heebo-Medium.ttf') format('truetype');
+  font-family: 'Heebo';
+  src: url('/fonts/Heebo-Medium.ttf') format('truetype');
   font-weight: 500;
   font-style: normal;
 }
 
 @font-face {
-  font-family: 'Heebo'; /* Choose a unique name for your font */
-  src: url('./assets/fonts/Heebo-Regular.ttf') format('truetype');
+  font-family: "Heebo";
+  src: url('/fonts/Heebo-Regular.ttf') format('truetype');
   font-weight: 400;
   font-style: normal;
 }
 
 @font-face {
-  font-family: 'Heebo'; /* Choose a unique name for your font */
-  src: url('./assets/fonts/Heebo-Light.ttf') format('truetype');
+  font-family: 'Heebo';
+  src: url('/fonts/Heebo-Light.ttf') format('truetype');
   font-weight: 300;
   font-style: normal;
 }
 
 @font-face {
-  font-family: 'Heebo'; /* Choose a unique name for your font */
-  src: url('./assets/fonts/Heebo-ExtraLight.ttf') format('truetype');
+  font-family: 'Heebo';
+  src: url('/fonts/Heebo-ExtraLight.ttf') format('truetype');
   font-weight: 200;
   font-style: normal;
 }
 
 @font-face {
-  font-family: 'Heebo'; /* Choose a unique name for your font */
-  src: url('./assets/fonts/Heebo-Thin.ttf') format('truetype');
+  font-family: 'Heebo';
+  src: url('/fonts/Heebo-Thin.ttf') format('truetype');
   font-weight: 100;
   font-style: normal;
 }
@@ -143,4 +147,26 @@ button:focus-visible {
 .no-scrollbar {
   -ms-overflow-style: none; /* For Internet Explorer and Edge */
   scrollbar-width: none; /* For Firefox */
+}
+
+@media (min-width: 1440px) {
+  .text-2xl-custom {
+    font-size: 1.5rem; /* example */
+  }
+
+  .grid-cols-4-custom {
+    grid-template-columns: 150px repeat(3, 1fr); /* example for your grid */
+  }
+
+  .show-lottie {
+    display: block;
+  }
+
+  .how-it-works-section-padding {
+    padding: 78px;
+  }
+
+  .hero-subtitle-section-fontsize {
+    font-size: 3rem;
+  }
 }

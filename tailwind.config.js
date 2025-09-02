@@ -1,14 +1,18 @@
-module.exports = {
-    content: [
-        "./index.html", // For Vite projects
-        "./src/**/*.{js,ts,jsx,tsx}", // For all your React components
-    ],
-    theme: {
-        extend: {
-            fontFamily: {
-                heebo: ["Heebo", "san-serif"],
-            }
-        }
+/** @type {import('tailwindcss').Config} */
+export default {
+  content: [
+    "./index.html",
+    "./src/**/*.{js,ts,jsx,tsx}",
+  ],
+  theme: {
+    extend: {
+      fontFamily: {
+        heebo: ["Heebo", "sans-serif"],
+      },
+      colors: {
+        testpink: '#ff00ff',
+      },
     },
-    plugins: [],
-}
+  },
+  plugins: [],
+};
