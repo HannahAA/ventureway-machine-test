@@ -3,7 +3,7 @@ import ChatMessageBubble from "./ChatMessageBubble";
 
 const Chatbox = ({messages}) => {
 
-    const [messageState, setMessageState] = useState(messages || []);
+    const [messageState, setMessageState] = useState(JSON.parse(localStorage.getItem("chatHistory")) || []);
     const [input, setInput] = useState("");
 
     const aiMessageLibrary = ["Okay.", "Thank you for your question. Let me think about that.", "I'll have an answer for you shortly."];
@@ -13,8 +13,15 @@ const Chatbox = ({messages}) => {
         setInput(e.target.value);
     };
 
+    const saveToLS = (senderVal, textVal) => {
+        let recentChatHistory = JSON.parse(localStorage.getItem("chatHistory")) || [];
+        recentChatHistory.push({sender: senderVal, text: textVal});
+        localStorage.setItem("chatHistory", JSON.stringify(recentChatHistory));
+    };
+
     const handleSubmit = () => {
         console.log("input that is submitted = ", input);
+        saveToLS("user", input);
         let currentMessages = messageState;
         currentMessages.push({ sender: "user", text: input }, { sender: "ai", text: "typing...", status: "typing" });
         setMessageState(currentMessages);
@@ -30,6 +37,7 @@ const Chatbox = ({messages}) => {
 
         const rqrdIndex = Math.floor(Math.random() * aiMessageLibrary.length);
         const rqrdAIMessage = aiMessageLibrary[rqrdIndex]; 
+        saveToLS("ai", rqrdAIMessage);
 
         // filteredMessages.push({ sender: "ai", text: "Thank you for your question. Let me think about that." });
         // filteredMessages.push({ sender: "ai", text: "Okay.", isAnimated: true });
