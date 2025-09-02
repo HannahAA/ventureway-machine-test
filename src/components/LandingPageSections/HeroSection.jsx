@@ -1,3 +1,7 @@
+// This is the hero section in Landing page.
+// It consist of some text and buttons.
+// When clicking on the buttons, user is navigated to the corresponding sections on the same page.
+
 const LandingPageHeroSection = () => {
     return (
         <div className="flex flex-col items-center gap-y-[24px] mt-[50px] lg:mt-[267px]">

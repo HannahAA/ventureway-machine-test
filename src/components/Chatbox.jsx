@@ -1,15 +1,21 @@
 import { useState } from "react";
 import ChatMessageBubble from "./ChatMessageBubble";
 
-const Chatbox = ({messages}) => {
+// This is the Chatbox component.
+// It has a field for displaying messages, and an input section and submit button.
+// The user's messages always appear on the right. The AI's messages appear on the left.
+// Whenever user submits a message, a 'typing...' text is displayed for 3 secs, and then replaced by the AI text.
+// All messages are svaed and stored to localstorage.
+
+const Chatbox = () => {
 
     const [messageState, setMessageState] = useState(JSON.parse(localStorage.getItem("chatHistory")) || []);
     const [input, setInput] = useState("");
 
+    // hardcoded AI message set
     const aiMessageLibrary = ["Okay.", "Thank you for your question. Let me think about that.", "I'll have an answer for you shortly."];
 
     const handleInput = (e) => {
-        console.log("input val being typed = ", e.target.value);
         setInput(e.target.value);
     };
 
@@ -20,7 +26,6 @@ const Chatbox = ({messages}) => {
     };
 
     const handleSubmit = () => {
-        console.log("input that is submitted = ", input);
         let currentMessages = messageState;
         let currentMssgCount = currentMessages?.length || 1;
         let userMssgId = "u" + currentMssgCount
@@ -28,8 +33,6 @@ const Chatbox = ({messages}) => {
         currentMessages.push({ id: userMssgId, sender: "user", text: input }, { id: 'ai' + currentMssgCount, sender: "ai", text: "typing...", status: "typing" });
         setMessageState(currentMessages);
         setInput("");
-        // const enterButton = document.getElementById("chatbox-submit-btn");
-        // enterButton.disabled = true;
         setTimeout(replyAsAI, 3000);
     };
 
@@ -43,11 +46,7 @@ const Chatbox = ({messages}) => {
         const aiMessgId = "ai" + currentMssgCount;
         saveToLS(aiMessgId, "ai", rqrdAIMessage);
 
-        // filteredMessages.push({ sender: "ai", text: "Thank you for your question. Let me think about that." });
-        // filteredMessages.push({ sender: "ai", text: "Okay.", isAnimated: true });
-        filteredMessages.push({ id: aiMessgId, sender: "ai", text: rqrdAIMessage, isAnimated: true });
-        // const enterButton = document.getElementById("chatbox-submit-btn");
-        // enterButton.disabled = false;
+        filteredMessages.push({ id: aiMessgId, sender: "ai", text: rqrdAIMessage });
         setMessageState(filteredMessages);
         const targetedDiv = document.getElementById("chatbox-mssg-field");
         targetedDiv.scrollTop = targetedDiv.scrollHeight;
@@ -56,7 +55,7 @@ const Chatbox = ({messages}) => {
     return (
         <div id="chatbox" className="flex flex-col justify-between bg-[#222627] w-[80.83vw] max-w-[1164px] h-[407px] lg:h-[722px] mt-[28px] rounded-[20px] p-4 lg:p-8">
             <div id="chatbox-mssg-field" className="bg-[#222627] w-full h-[300px] lg:h-[567px] overflow-y-auto no-scrollbar flex flex-col gap-[34px]">
-                {messageState.map((message, index) => <ChatMessageBubble key={index} message={message} messageIndex={index} allMessages={messageState} updateMessagesState={setMessageState} sender={message?.sender} text={message?.text} status={message?.status} isAnimated={message?.isAnimated} />)}
+                {messageState.map((message, index) => <ChatMessageBubble key={index} message={message} />)}
             </div>
             <div id="chatbox-input-section" className="bg-[#222627] w-full h-[50px] lg:h-[66px] flex gap-[15px] relative">
                 <input 
