@@ -29,7 +29,7 @@ export default function ManualLandingPage() {
             </Container>
 
             <Container>
-                <div id="chatbox-section-heading" className="flex flex-col lg:flex-row place-self-center font-bold text-2xl lg:text-5xl gap-2 mt-[100px] lg:mt-[170px]">
+                <div id="chatbox-section" className="flex flex-col lg:flex-row place-self-center font-bold text-2xl lg:text-5xl gap-2 mt-[100px] lg:mt-[170px]">
                     <h2 className="bg-linear-to-r from-[#00E5FC] to-[#137FD8] bg-clip-text text-transparent">Ask me anything about</h2>
                     <h2 className="bg-linear-to-r from-[#CACACA] to-[#878787] bg-clip-text text-transparent">InnoHour!</h2>
                 </div>

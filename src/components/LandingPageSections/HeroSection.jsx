@@ -14,7 +14,7 @@ const LandingPageHeroSection = () => {
             <p className="text-white font-medium text-base max-w-[527px]">In just 60 minutes, we’ll help you uncover simple, practical ways to innovate your business without the complexity.</p>
             <div className="flex flex-col lg:flex-row gap-4 lg:gap-6 lg:mt-[53px]">
                 <a href="#how-it-works" className="px-[79px] py-[12px] bg-[#1381D9] text-white font-medium text-base rounded-lg shadow hover:bg-blue-700 transition">Learn More</a>
-                <a href="#chatbox-section-heading" className="px-[85px] py-[12px] bg-[#ECE9E9] text-[#191919] font-medium text-base rounded-lg shadow hover:bg-gray-300 transition">Chat Now</a>
+                <a href="#chatbox-section" className="px-[85px] py-[12px] bg-[#ECE9E9] text-[#191919] font-medium text-base rounded-lg shadow hover:bg-gray-300 transition">Chat Now</a>
             </div>
         </div>
     )
