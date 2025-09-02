@@ -13,17 +13,19 @@ const Chatbox = ({messages}) => {
         setInput(e.target.value);
     };
 
-    const saveToLS = (senderVal, textVal) => {
+    const saveToLS = (idVal, senderVal, textVal) => {
         let recentChatHistory = JSON.parse(localStorage.getItem("chatHistory")) || [];
-        recentChatHistory.push({sender: senderVal, text: textVal});
+        recentChatHistory.push({id: idVal, sender: senderVal, text: textVal});
         localStorage.setItem("chatHistory", JSON.stringify(recentChatHistory));
     };
 
     const handleSubmit = () => {
         console.log("input that is submitted = ", input);
-        saveToLS("user", input);
         let currentMessages = messageState;
-        currentMessages.push({ sender: "user", text: input }, { sender: "ai", text: "typing...", status: "typing" });
+        let currentMssgCount = currentMessages?.length || 1;
+        let userMssgId = "u" + currentMssgCount
+        saveToLS(userMssgId, "user", input);
+        currentMessages.push({ id: userMssgId, sender: "user", text: input }, { id: 'ai' + currentMssgCount, sender: "ai", text: "typing...", status: "typing" });
         setMessageState(currentMessages);
         setInput("");
         // const enterButton = document.getElementById("chatbox-submit-btn");
@@ -33,15 +35,17 @@ const Chatbox = ({messages}) => {
 
     const replyAsAI = () => {
         let currentMessages = messageState;
+        let currentMssgCount = currentMessages?.length || 1;
         let filteredMessages = currentMessages.filter(message => message?.status !== "typing");
 
         const rqrdIndex = Math.floor(Math.random() * aiMessageLibrary.length);
         const rqrdAIMessage = aiMessageLibrary[rqrdIndex]; 
-        saveToLS("ai", rqrdAIMessage);
+        const aiMessgId = "ai" + currentMssgCount;
+        saveToLS(aiMessgId, "ai", rqrdAIMessage);
 
         // filteredMessages.push({ sender: "ai", text: "Thank you for your question. Let me think about that." });
         // filteredMessages.push({ sender: "ai", text: "Okay.", isAnimated: true });
-        filteredMessages.push({ sender: "ai", text: rqrdAIMessage, isAnimated: true });
+        filteredMessages.push({ id: aiMessgId, sender: "ai", text: rqrdAIMessage, isAnimated: true });
         // const enterButton = document.getElementById("chatbox-submit-btn");
         // enterButton.disabled = false;
         setMessageState(filteredMessages);
