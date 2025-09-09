@@ -106,6 +106,10 @@ body {
   .show-lottie {
     display: block;
   }
+  
+  .stretch-in-2xl {
+    align-items: stretch;
+  }
 
   .how-it-works-section-padding {
     padding: 78px;

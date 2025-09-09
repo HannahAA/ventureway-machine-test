@@ -68,7 +68,7 @@ const Chatbox = () => {
                 className="h-full flex-grow bg-[#191919] rounded-lg lg:rounded-[20px] text-white font-normal text-sm lg:text-xl p-3 pr-[76px] lg:p-5" 
                 />
                 <button id="chatbox-mob-submit-btn" onClick={handleSubmit} className='lg:hidden absolute right-2 bottom-3 w-fit h-fit p-1 rounded-sm bg-[#1381D9] text-sm'>Submit</button>
-                <button id="chatbox-submit-btn" onClick={handleSubmit} className="hidden lg:block w-[8.54vw] h-full bg-[#1381D9] hover:bg-blue-500 text-white font-normal text-sm lg:text-xl leading-[66px] rounded-[20px] cursor-pointer">Submit</button>
+                <button id="chatbox-submit-btn" onClick={handleSubmit} className="hidden lg:block w-[8.54vw] h-full bg-[#1381D9] hover:bg-blue-600 text-white font-normal text-sm lg:text-xl leading-[66px] rounded-[20px] cursor-pointer">Submit</button>
             </div>
         </div>
     );
