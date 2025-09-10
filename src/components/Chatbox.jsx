@@ -15,6 +15,8 @@ const Chatbox = () => {
     // hardcoded AI message set
     const aiMessageLibrary = ["Okay.", "Thank you for your question. Let me think about that.", "I'll have an answer for you shortly."];
 
+    const AIReplyDelay = 3000; // in milliseconds
+
     const handleInput = (e) => {
         setInput(e.target.value);
     };
@@ -33,7 +35,7 @@ const Chatbox = () => {
         currentMessages.push({ id: userMssgId, sender: "user", text: input }, { id: 'ai' + currentMssgCount, sender: "ai", text: "typing...", status: "typing" });
         setMessageState(currentMessages);
         setInput("");
-        setTimeout(replyAsAI, 3000);
+        setTimeout(replyAsAI, AIReplyDelay);
     };
 
     const replyAsAI = () => {

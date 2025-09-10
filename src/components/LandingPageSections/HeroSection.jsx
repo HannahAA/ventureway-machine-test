@@ -1,5 +1,4 @@
 import { motion } from "motion/react";
-import { text } from "motion/react-client";
 
 // This is the hero section in Landing page.
 // It consist of some text and buttons.
@@ -81,8 +80,6 @@ const LandingPageHeroSection = () => {
                 className="lg:hidden px-[85px] py-[12px] bg-[#ECE9E9] text-[#191919] font-medium text-base rounded-lg shadow hover:bg-gray-300 transition" animate={{ scale: [1, 1.1, 1] }} transition={{ duration: 1.5, repeat: Infinity }}>
                     Chat Now
                 </motion.a>
-                {/* <motion.a href="#chatbox-section" 
-                className="hidden lg:block px-[85px] py-[12px] bg-[#ECE9E9] text-[#191919] font-medium text-base rounded-lg shadow hover:bg-gray-300 transition" whileHover={{ scale: 1.05 }}> */}
                 <motion.a href="#chatbox-section" 
                 className="hidden lg:block px-[85px] py-[12px] bg-[#ECE9E9] text-[#191919] font-medium text-base rounded-lg shadow hover:bg-gray-300 transition" whileHover={{ boxShadow: "0px 0px 8px rgba(19, 129, 217, 1)", scale: 1.05 }} >
                     Chat Now
